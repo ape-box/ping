@@ -1,0 +1,13 @@
+
+
+table td span {
+    padding: 0.5em;
+}
+
+table td span:nth-child(odd) {
+    background-color: #00FF00;
+}
+
+table td span:nth-child(even) {
+    background-color: #FF0000;
+}

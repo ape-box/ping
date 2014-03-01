@@ -1,0 +1,28 @@
+<h1>Pong Times</h1>
+<a class="btn btn-info" href="/" title="Back">back</a>
+
+
+<table class="table table-striped table-condensed table-responsive">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Pings</th>
+            <th>Day Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% dataset.each do |key, row| %>
+        <tr>
+            <td><%= row[0].strftime "%Y-%m-%d" %></td>
+            <td>
+                <% row[1].each do |p| %>
+                    <span><%= p.time.to_time.strftime "%H:%M" %></span>
+                <% end %>
+            </td>
+            <td><%= (row[2].floor).to_s + "h " + (60*(row[2]-row[2].floor)).round.to_s + "m" %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<a class="btn btn-info" href="/" title="Back">back</a>
